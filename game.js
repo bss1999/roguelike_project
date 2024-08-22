@@ -17,7 +17,7 @@ class Player {
 
   attack() {
     // 플레이어의 공격
-    return Math.floor(Math.random() * 11) + this.power
+    return Math.floor(Math.random() * 11) + (this.power - 5)
     }
   
   run() {
@@ -34,7 +34,7 @@ class Monster {
 
   attack() {
     // 몬스터의 공격
-    return Math.floor(Math.random() * 6) + this.power
+    return Math.floor(Math.random() * 11) + (this.power - 5)
   }
 }
 
@@ -152,7 +152,7 @@ const battle = async (stage, player, monster) => {
 
     if(monster.hp==null) {
       logs.push(`[${i}] [도망 성공!] 적으로부터 도망쳤습니다.`)
-      logs.push(`도망치는것에 성공하여 체력 30이 회복됩니다.`)
+      logs.push(`도망에 성공하여 체력 30이 회복됩니다.`)
       player.hp += 30;
       break;
     }
